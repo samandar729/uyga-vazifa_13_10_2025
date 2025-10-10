@@ -1,11 +1,9 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from django.db import models
 
-def app111_funksiya1(request):
-    return HttpResponse("app111 ning 1-funksiyasi ishlamoqda ")
+class www(models.Model):
+    title=models.CharField(max_length=100)
 
-def app111_funksiya2(request):
-    return HttpResponse("app111 ning 2-kunksiyasi ishlamoqda ")
+    def __str__(self):
+        return self.title
 
-def app111_funksiya3(request):
-    return HttpResponse("app111 ning 3-kunksiyasi ishlamoqda ")
+class categories(models.Model)
