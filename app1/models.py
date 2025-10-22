@@ -29,5 +29,21 @@ class order_details(models.Model):
     order_id=models.ForeignKey(orders, on_delete=models.CASCADE, default=1)
     product_id=models.ForeignKey(products, on_delete=models.CASCADE, default=1)
 
+class Suppliers(models.Model):
+    company_name=models.CharField(max_length=100)
+    contact_name = models.CharField(max_length=100)
+    contact_title = models.CharField(max_length=100)
+    address=models.CharField(max_length=100)
+    city=models.CharField(max_length=100)
+    region=models.CharField(max_length=100)
+    postal_code=models.CharField(max_length=5)
+    country=models.CharField(max_length=15)
+    phone=models.CharField(max_length=10)
+    fax=models.CharField(max_length=30)
+    homepage=models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.company_name
+
     def __str__(self):
         return self.product_id.product_name
